@@ -1,0 +1,29 @@
+# Gates als Kit, kein Rabatt (Design-Doc §5 G6): dieselben Pruefklassen wie im Core.
+# Ein Baustein, der hier durchfaellt, gehoert nicht in ein Release.
+name: ci
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  bausteine:
+    name: Bausteine pruefen
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Blob-Waechter — keine Secrets, Dumps oder gebauten Pakete im Baum
+        # Gebaute Pakete gehoeren in Releases. Liegen sie AUCH im Baum, driften Quelle
+        # und Artefakt auseinander und niemand weiss, welches der beiden gilt.
+        run: |
+          set -e
+          treffer=$(git ls-files | grep -E '\.(env|bak|rdb|aof|tar\.gz|dump|ottoext|ottotheme|ottolang|ottopack)$' || true)
+          if [ -n "$treffer" ]; then
+            echo "::error::Verbotene Dateien im Baum:"; echo "$treffer"; exit 1
+          fi
+          echo "sauber"
+
+      - name: Bausteine (Manifest, Pflichtfelder, Ordnername == id)
+        run: python3 kit/check_bausteine.py

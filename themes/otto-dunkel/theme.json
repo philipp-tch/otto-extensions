@@ -1,0 +1,24 @@
+{
+  "kind": "theme",
+  "id": "otto-dunkel",
+  "name": "Otto Dunkel",
+  "version": "1.0.0",
+  "api_version": "1",
+  "i18n": {
+    "de": {"titel": "Otto Dunkel", "hilfe": "Barrierefreies Standard-Theme (dunkel)"},
+    "fr": {"titel": "Otto Sombre", "hilfe": "Theme standard accessible (sombre)"},
+    "it": {"titel": "Otto Scuro", "hilfe": "Tema standard accessibile (scuro)"},
+    "en": {"titel": "Otto Dark", "hilfe": "Accessible default theme (dark)"}
+  },
+  "farben": {
+    "primary": "#3FB6AF",
+    "accent": "#D9B24A",
+    "surface": "#121A19",
+    "text": "#E6EEED",
+    "muted": "#9AAAA8",
+    "border": "#2A3736",
+    "danger": "#E06A6A",
+    "success": "#5BC08E"
+  },
+  "purge_story": "theme.json + Assets im Firmen-Config-Volume werden bei Deinstallation geloescht"
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "theme",
+  "id": "otto-hell",
+  "name": "Otto Hell",
+  "version": "1.0.0",
+  "api_version": "1",
+  "i18n": {
+    "de": {"titel": "Otto Hell", "hilfe": "Barrierefreies Standard-Theme (hell)"},
+    "fr": {"titel": "Otto Clair", "hilfe": "Theme standard accessible (clair)"},
+    "it": {"titel": "Otto Chiaro", "hilfe": "Tema standard accessibile (chiaro)"},
+    "en": {"titel": "Otto Light", "hilfe": "Accessible default theme (light)"}
+  },
+  "farben": {
+    "primary": "#0F6E6A",
+    "accent": "#B58A18",
+    "surface": "#FFFFFF",
+    "text": "#182726",
+    "muted": "#5C6B6A",
+    "border": "#D6DEDD",
+    "danger": "#B23A3A",
+    "success": "#2E7D5B"
+  },
+  "purge_story": "theme.json + Assets im Firmen-Config-Volume werden bei Deinstallation geloescht"
+}

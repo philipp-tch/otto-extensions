@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.ottoext
+*.ottotheme
+*.ottolang
+*.ottopack
+# Gebaute Pakete gehoeren in Releases, nicht in den Baum: sonst driften Quelle und
+# Artefakt auseinander und niemand weiss, welches der beiden gilt.
+build/
+.venv/
